@@ -1,0 +1,29 @@
+﻿@model ServeNet.Models.DomainsViewModel
+@{
+    ViewBag.Title = "Domains";
+}
+<h2>Top Level Domains</h2>
+<table class="table">
+    <tr>
+        <td>Top Level Domain Id</td>
+        <td>Min Period</td>
+        <td>Max Period</td>
+        <td>Cost (£)</td>
+    </tr>
+    @foreach (var domiain in Model.Items)
+    {
+        <tr>
+            <td>@domiain.DomainId</td>
+            <td>@domiain.MinPeriod</td>
+            <td>@domiain.MaxPeriod</td>
+            <td>@domiain.DomainCost</td>
+        </tr>
+    }
+    
+    
+</table>
+<div class="col-lg-6 col-lg-offset-3 text-center">
+    @Html.ActionLink("Previous", "Index", new { PageNumber = @Model.PageNumber - 1 })  |
+    @Html.ActionLink("Next", "Index", new { PageNumber = @Model.PageNumber + 1 })
+
+</div>

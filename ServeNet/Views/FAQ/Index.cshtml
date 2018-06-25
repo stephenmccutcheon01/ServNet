@@ -1,0 +1,45 @@
+﻿@using System.Security.AccessControl
+@model ServeNet.Models.FaqModelView
+@{
+    ViewBag.Title = "FAQ";
+}
+
+<h2>Frequently Asked Questions</h2>
+
+@using(Html.BeginForm())
+{
+    <p>Section:
+    @Html.DropDownListFor(x=>x.SelectedSectionId,
+            @Model.SectionsDropDown, new { @class = "form-control" , onchange="form.submit();" })
+    </p>
+}
+
+
+
+@foreach (var section1 in @Model.Sections)
+{
+    <h3>@section1.Section</h3>
+    <br />
+    <div class="container ">
+        <div class="panel-group" id="@section1.SectionId">
+         @foreach (var question1 in @section1.Questions)
+        {
+       
+                <div class="panel panel-default ">
+                    <div class="panel-heading accordion-toggle question-toggle collapsed" data-toggle="collapse" data-parent="@section1.SectionIdDataSource" data-target="@question1.QuestionIdDataSource")>
+                        <h4 class="panel-title">
+                            <a href="#" class="ing">@question1.Question</a>
+                        </h4>
+                    </div>
+                    <div id="@question1.QuestionId"  class="panel-collapse collapse" style="height: 0px;">
+                        <div class="panel-body">
+                            <h5><span class="label label-primary">Answer</span></h5>
+                            @Html.Raw(@question1.Answer)
+                        </div>
+                    </div>
+                </div>
+        }
+        </div>
+        <!--/panel-group-->
+    </div>
+}

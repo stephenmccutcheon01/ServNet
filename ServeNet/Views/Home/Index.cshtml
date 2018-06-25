@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+    <div class="jumbotron">
+        <h1>ServNet</h1>
+        <p class="lead">Welcome to ServNet.</p>
+    </div>
+
+        <div class="col-lg-6 col-lg-offset-3 text-center">
+    <ul class="list-inline" >
+        <li>
+            <a href=@Url.Action("Index", "AccountSummary")>
+                <img src="/Images/accounts1.png" />
+                <h2>Accounts</h2>
+            </a>
+        </li>
+        <li>
+            <a href=@Url.Action("Index", "Servers")>
+                <img src="/Images/server1.png" />
+                <h2>Servers</h2>
+            </a>
+        </li>
+        <li>
+            <a href=@Url.Action("Index", "Domains")>
+                <img src="/Images/domains.png" />
+                <h2>Domains</h2>
+            </a>
+        </li>
+    </ul>
+    <ul class="list-inline">
+        <li>
+            <a href=@Url.Action("About", "Home")>
+                <img src="/Images/about.png" />
+                <h2>About</h2>
+            </a>
+        </li>
+        <li>
+            <a href=@Url.Action("Contact", "Home")>
+                <img src="/Images/contact1.png" />
+                <h2>Contact</h2>
+            </a>
+        </li>
+        <li>
+            <a href=@Url.Action("Index", "Faq")>
+                <img src="/Images/faq.png" />
+                <h2>FAQ</h2>
+            </a>
+        </li>
+    </ul>
+</div>

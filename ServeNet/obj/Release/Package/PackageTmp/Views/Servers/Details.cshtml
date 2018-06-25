@@ -1,0 +1,158 @@
+﻿@model ServeNet.Models.ServerDetailModel
+@{
+    ViewBag.Title = "Servers";
+}   
+<h2>Server: @Model.ServerId</h2>
+   
+<table>
+    <tr>
+        <td>Server Description:</td>
+        <td>@Model.ServerDescription</td>
+    </tr>
+    <tr>
+        <td>Service Description:</td>
+        <td>@Model.ServiceDescription</td>
+    </tr>
+</table>
+<div class="row">
+    <div class="col-md-4">
+        <table>
+            <tr>
+                <td colspan="3">
+                    <h3>BandWidth Information</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>BW24hIn:</td>
+                <td>@Model.BandWidthInfo.Bw24HIn</td>
+            </tr>
+            <tr>
+                <td>BW24hOut:</td>
+                <td>@Model.BandWidthInfo.Bw24HOutField</td>
+            </tr>
+            <tr>
+                <td>BW4hIn:</td>
+                <td>@Model.BandWidthInfo.Bw4HInField</td>
+            </tr>
+            <tr>
+                <td>BW4hOut:</td>
+                <td>@Model.BandWidthInfo.Bw4HOutField</td>
+            </tr>
+            <tr>
+                <td>BWPredicted14DInField:</td>
+                <td>@Model.BandWidthInfo.BwPredicted14DInField</td>
+            </tr>
+            <tr>
+                <td>BWPredicted14dOutField:</td>
+                <td>@Model.BandWidthInfo.BwPredicted14DOutField</td>
+            </tr>
+            <tr>
+                <td>BWPredicted24InField:</td>
+                <td>@Model.BandWidthInfo.BwPredicted24HInField</td>
+            </tr>
+            <tr>
+                <td>BWPredicted25hOutField:</td>
+                <td>@Model.BandWidthInfo.BwPredicted24HOutField</td>
+            </tr>
+            <tr>
+                <td>BWSofarThisMonthInField:</td>
+                <td>@Model.BandWidthInfo.BwSofarThisMonthInField</td>
+            </tr>
+            <tr>
+                <td>BWSofarThisMonthOutField:</td>
+                <td>@Model.BandWidthInfo.BwSofarThisMonthOutField</td>
+            </tr>
+            <tr>
+                <td>LastUpdatedField:</td>
+                <td>@Model.BandWidthInfo.LastUpdatedField</td>
+            </tr>
+        </table>
+    </div>
+    <div class="col-md-4">
+        <table>
+            <tr>
+                <td>
+                    <h3>IP Addresses</h3>
+                </td>
+            </tr>
+            @foreach (var IP in Model.IpAddresses)
+            {
+
+                <tr>
+                    <td>@IP</td>
+                </tr>
+            }
+        </table>
+
+    </div>
+    <div class="col-md-4">
+        <table>
+            <tr>
+                <td colspan="5">
+                    <h3>Reverse DNS</h3>
+                </td>
+            </tr>
+            @if (Model.HasReverseDnsEntry == true)
+            {
+                <table>
+                    <tr>
+                        <td>Host Name</td>
+                        <td style="width: 10px"></td>
+                        <td>IP Address</td>
+                    </tr>
+                    @foreach (var revDns in Model.ReverseDns)
+                    {
+
+                        <tr>
+                            <td>@revDns.HostName</td>
+                            <td style="width: 10px"></td>
+                            <td>@revDns.IpAddres</td>
+                        </tr>
+
+                    }
+                </table>
+            }
+            else
+            {
+                <tr>
+                    <td>
+                        @Model.NoReverseDnsEntryMessage
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</div>
+<h3>Monitoring Information</h3>
+<table class="table">
+    <tr>
+        <td>Test Id</td>
+        <td>Test Name</td>
+        <td>Status Code</td>
+        <td>Monitored IP</td>
+        <td>Status Details</td>
+        <td>Test Type</td>
+        <td>Last Updated</td>
+        <td>Last Status Change</td>
+    </tr>
+    @foreach (var rec in Model.MonitorStatus)
+    {
+        <tr>
+            <td>@rec.TestId</td>
+            <td>@rec.TestName</td>
+            <td>@rec.StatusCode</td>
+            <td>@rec.MonitoredIp</td>
+            <td>@rec.StatusDetail</td>
+            <td>@rec.TestType</td>
+            <td>@rec.LastUpdated</td>
+            <td>@rec.LastStatusChange</td>
+        </tr>
+    }
+</table>
+<br/>
+<p>
+    <div class="col-lg-6 col-lg-offset-3 text-center">
+        @Html.ActionLink("Back to Server List", "Index")
+    </div>
+</p>

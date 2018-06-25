@@ -1,0 +1,19 @@
+﻿@model ServeNet.Models.AccountSummaryViewModel
+@{
+    ViewBag.Title = "Accounts";
+}
+<h2>Account</h2>
+<p>
+    Balance: @Model.Balance
+    <br />
+    Next Payment Amount: @Model.NextPaymentAmount
+    <br/>
+    Next Payment Date: @Model.NextPaymentDate
+    <br/>
+    OverDue Invoices: @Model.OverdueInvoices
+    <br/>
+    Unpaid Invoices: @Model.UnpaidInvoices
+    <br/>
+</p>
+
+

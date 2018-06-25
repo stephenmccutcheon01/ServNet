@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="ServeNet.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="APIUserName" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">recruitingtest@iosmart.com</Value>
+    </Setting>
+    <Setting Name="APIPassword" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">5C8YG2DGEL</Value>
+    </Setting>
+    <Setting Name="NoDNSInfo" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">No Entries for Reverse DNS</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,18 @@
+﻿@model ServeNet.Models.ServerViewIndexModel
+@{
+    ViewBag.Title = "Servers";
+}
+<h2>Servers</h2>
+<br/>
+<table>
+   
+    @foreach (var serv in Model.Servers)
+    {
+     <p>
+       @Html.ActionLink(@serv.ServerDescription, "Details", new { ServerID = @serv.ServerId})
+     </p>
+    }
+
+</table>
+
+

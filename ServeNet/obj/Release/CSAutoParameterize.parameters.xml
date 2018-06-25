@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="DefaultConnection-Web.config Connection String" description="DefaultConnection Connection String used in web.config by the application to access the database." defaultValue="Data Source=mccutcheon.database.windows.net;Initial Catalog=ServNet1;Integrated Security=False;User ID=stephen_mc;Password=Cooker-123;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\MessAbout\\ServeNet\\ServeNet\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>

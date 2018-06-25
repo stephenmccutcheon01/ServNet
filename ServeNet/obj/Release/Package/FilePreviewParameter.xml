@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="ServNet1" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\MessAbout\\ServeNet\\ServeNet\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\MessAbout\\ServeNet\\ServeNet\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="DefaultConnection-Web.config Connection String" description="" value="Data Source=mccutcheon.database.windows.net;Initial Catalog=ServNet1;Integrated Security=False;User ID=stephen_mc;Password=Cooker-123;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\MessAbout\\ServeNet\\ServeNet\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='DefaultConnection']/@connectionString" />
+  </parameter>
+</parameters>
